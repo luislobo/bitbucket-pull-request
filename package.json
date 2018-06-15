@@ -1,6 +1,6 @@
 {
   "name": "bitbucket-pull-request",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create Pull Request in BitBucket",
   "main": "lib/index.js",
   "scripts": {
