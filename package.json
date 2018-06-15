@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "bluebird": "3.5.1",
+    "lodash": "^4.17.10",
     "nopt": "^4.0.1",
     "request": "2.87.0"
   }
