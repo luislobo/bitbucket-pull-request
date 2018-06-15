@@ -1,0 +1,35 @@
+{
+  "name": "bitbucket-pull-request",
+  "version": "1.0.0",
+  "description": "Create Pull Request in BitBucket",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest ./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/luislobo/bitbucket-pull-request.git"
+  },
+  "keywords": [
+    "bitbucket",
+    "pull",
+    "request",
+    "pr",
+    "pull-request",
+    "pullrequest"
+  ],
+  "author": "Luis Lobo Borobia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luislobo/bitbucket-pull-request/issues"
+  },
+  "homepage": "https://github.com/luislobo/bitbucket-pull-request#readme",
+  "devDependencies": {
+    "jest": "^23.1.0",
+    "standard": "^11.0.1"
+  },
+  "dependencies": {
+    "bluebird": "3.5.1",
+    "request": "2.87.0"
+  }
+}
