@@ -5,28 +5,37 @@
 
   const bitbucketPullRequest = require('../lib/index.js')
 
-  bitbucketPullRequest.deref = function (c) {
-    if (!c) return ''
-    if (c.match(/[A-Z]/)) {
-      c = c.replace(/([A-Z])/g, function (m) {
-        return '-' + m.toLowerCase()
-      })
-    }
-    if (plumbing.indexOf(c) !== -1) return c
-    var a = abbrevs[c]
-    if (aliases[a]) a = aliases[a]
-    return a
-  }
-
   const nopt = require('nopt')
 
   const conf = nopt({
-    create: [String, String, String],
-    get: [],
-    approve: String
+    username: [null, String],
+    password: [null, String],
+    repositoryName: String,
+    repositoryUser: String,
+    title: String,
+    description: String,
+    sourceBranch: String,
+    destinationBranch: String
   }, {}, process.argv, 2)
 
-  bitbucketPullRequest.argv = conf.argv.remain
-  console.log(conf)
+  if (conf.argv.remain.length !== 1) {
+    console.log('Wrong commands', conf.argv)
+  }
+
+  if (conf.argv.remain[0] === 'create') {
+    bitbucketPullRequest.create(
+      conf.repositoryUser,
+      conf.repositoryName,
+      conf.title,
+      conf.description,
+      conf.sourceBranch,
+      conf.destinationBranch
+    ).then((result) => {
+      console.log(`\nPull Request: #${result.id} ${result.title} - ${result.links.html.href}`)
+    })
+      .catch(console.error)
+  } else {
+    console.log('Wrong commands', conf.argv)
+  }
 
 })()
