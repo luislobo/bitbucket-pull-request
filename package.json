@@ -2,7 +2,7 @@
   "name": "bitbucket-pull-request",
   "version": "1.0.0",
   "description": "Create Pull Request in BitBucket",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "jest ./test"
   },
@@ -18,6 +18,12 @@
     "pull-request",
     "pullrequest"
   ],
+  "bin": {
+    "bitbucket-pull-request": "./bin/bitbucket-pull-request-cli.js"
+  },
+  "directories": {
+    "bin": "./bin"
+  },
   "author": "Luis Lobo Borobia",
   "license": "MIT",
   "bugs": {
@@ -30,6 +36,7 @@
   },
   "dependencies": {
     "bluebird": "3.5.1",
+    "nopt": "^4.0.1",
     "request": "2.87.0"
   }
 }

@@ -1,5 +1,4 @@
-const {get, create, approve, decline} = require('../index')
-let pullRequestId = ''
+const {get, create, decline} = require('../lib/index')
 
 test('get pull request', async () => {
   const result = await get('luislobo', 'bitbucket-pull-request-test')
